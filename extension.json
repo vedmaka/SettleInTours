@@ -1,7 +1,7 @@
 {
 	"name": "SettleInTours",
 	"author": [
-		"Jon",
+		"Jon"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:SettleInTours",
 	"descriptionmsg": "settleintours-desc",
@@ -9,19 +9,34 @@
 	"type": "parserhook",
 	"MessagesDirs": {
 		"SettleInTours": [
-			"i18n"
+			"i18n",
+			"i18n/tours/settleintest"
 		]
 	},
-	"Hooks": {
-
-	},
 	"ResourceModules": {
-		"ext.guidedTour.tour.settlein-test": {
+		"ext.guidedTour.tour.settleintest": {
 			"scripts": [
-                "test.js"
+                "tours/settleintest.js"
 			],
-			"dependencies": "ext.guidedTour"
-		},
+			"dependencies": [
+				"ext.settlegeosearch.main",
+				"ext.guidedTour"
+			],
+			"messages": [
+				"settlein-tours-tour-settleintest-step-1-title",
+				"settlein-tours-tour-settleintest-step-1-text",
+				"settlein-tours-tour-settleintest-step-2-title",
+				"settlein-tours-tour-settleintest-step-2-text",
+				"settlein-tours-tour-settleintest-step-3-title",
+				"settlein-tours-tour-settleintest-step-3-text",
+				"settlein-tours-tour-settleintest-step-4-title",
+				"settlein-tours-tour-settleintest-step-4-text",
+				"settlein-tours-tour-settleintest-step-5-title",
+				"settlein-tours-tour-settleintest-step-5-text",
+				"settlein-tours-tour-settleintest-step-6-title",
+				"settlein-tours-tour-settleintest-step-6-text"
+			]
+		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "modules",

@@ -1,0 +1,14 @@
+{
+    "settlein-tours-tour-settleintest-step-1-title": "Introduction",
+    "settlein-tours-tour-settleintest-step-1-text": "Welcome to the guided tour. Click next button to begin.",
+    "settlein-tours-tour-settleintest-step-2-title": "Search panel",
+    "settlein-tours-tour-settleintest-step-2-text": "This panel allows you to search across all records.",
+    "settlein-tours-tour-settleintest-step-3-title": "Location filter",
+    "settlein-tours-tour-settleintest-step-3-text": "This filer allows you to limit search by particular location.",
+    "settlein-tours-tour-settleintest-step-4-title": "Text filter",
+    "settlein-tours-tour-settleintest-step-4-text": "This filer allows you to specify search term.",
+    "settlein-tours-tour-settleintest-step-5-title": "Try to search!",
+    "settlein-tours-tour-settleintest-step-5-text": "Lets try to search for something, enter your term into this field and press ENTER.",
+    "settlein-tours-tour-settleintest-step-6-title": "Hooray!",
+    "settlein-tours-tour-settleintest-step-6-text": "You are landed on search results page, click next to proceed."
+}
