@@ -5,9 +5,9 @@
 
 	var tour;
 		
-	//if( mw.config.get != 'Main Page' ) {
-	//	return;
-	//}
+	if( mw.config.get('wgPageName') != 'Main_Page' && mw.config.get('wgPageName') != 'Special:SettleGeoSearch' ) {
+		return;
+	}
 
 	tour = new gt.TourBuilder( {
 		/*
@@ -17,7 +17,9 @@
 		 * If this is an on-wiki tour, it should match the MediaWiki page.  For instance,
 		 * if this were on-wiki, it would be MediaWiki:Guidedtour-tour-test.js
 		 */
-		name: 'settleintest'
+		name: 'settleintest',
+		isSinglePage: false,
+		//showConditionally: 'stickToFirstPage'
 	} );
 	
 	tour.firstStep( {
@@ -69,7 +71,17 @@
 		overlay: false,
 		allowAutomaticNext: false,
 		closeOnClickOutside: false,
-		autoFocus: true
+		autoFocus: true,
+		buttons: [
+			{
+				action: 'okay',
+				type: 'neutral',
+				onclick: function(){
+					$('.selectize-search-appendix').val('test');
+					$('.selectize-search-appendix').focus();
+				}
+			}
+		]
 	} )
 	.transition( function () {
 		if ( mw.config.get( 'wgTitle' ) == 'SettleGeoSearch' ) {
@@ -83,7 +95,35 @@
 		descriptionmsg: 'settlein-tours-tour-settleintest-step-6-text',
 		//attachTo: '.selectize-search-appendix',
 		//position: 'top',
-		overlay: true
+		overlay: true,
+		/*buttons: [
+			{
+				action: 'end'
+			}
+		]*/
+	} ).next('search7');
+	
+	tour.step( {
+		name: 'search7',
+		titlemsg: 'settlein-tours-tour-settleintest-step-7-title',
+		descriptionmsg: 'settlein-tours-tour-settleintest-step-7-text',
+		attachTo: '#special-page-search-results-summary > h1',
+		position: 'bottomLeft',
+		overlay: false
+	} ).next('search8');
+	
+	tour.step( {
+		name: 'search8',
+		titlemsg: 'settlein-tours-tour-settleintest-step-8-title',
+		descriptionmsg: 'settlein-tours-tour-settleintest-step-8-text',
+		attachTo: '#settle-geo-search-results-wrapper .col-md-12 .panel:first-child',
+		position: 'top',
+		overlay: false,
+		buttons: [
+			{
+				action: 'end'
+			}
+		]
 	} );
 
 } ( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
